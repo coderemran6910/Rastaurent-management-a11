@@ -1,0 +1,290 @@
+[
+    {
+      "foodname": "Chicken Alfredo",
+      "foodimage": "chicken_alfredo.jpg",
+      "foodcategory": "pasta",
+      "price": 15.99,
+      "quantity": 10
+    },
+    {
+      "foodname": "Margherita Pizza",
+      "foodimage": "margherita_pizza.jpg",
+      "foodcategory": "pizza",
+      "price": 12.99,
+      "quantity": 15
+    },
+    {
+      "foodname": "Grilled Salmon",
+      "foodimage": "grilled_salmon.jpg",
+      "foodcategory": "seafood",
+      "price": 18.99,
+      "quantity": 8
+    },
+    {
+      "foodname": "Vegetable Stir-Fry",
+      "foodimage": "vegetable_stir_fry.jpg",
+      "foodcategory": "vegetarian",
+      "price": 14.99,
+      "quantity": 12
+    },
+    {
+      "foodname": "Chocolate Fondue",
+      "foodimage": "chocolate_fondue.jpg",
+      "foodcategory": "dessert",
+      "price": 9.99,
+      "quantity": 20
+    },
+    {
+      "foodname": "Tropical Smoothie",
+      "foodimage": "tropical_smoothie.jpg",
+      "foodcategory": "beverage",
+      "price": 6.99,
+      "quantity": 25
+    },
+    {
+      "foodname": "BBQ Ribs",
+      "foodimage": "bbq_ribs.jpg",
+      "foodcategory": "meat",
+      "price": 21.99,
+      "quantity": 7
+    },
+    {
+      "foodname": "Caesar Salad",
+      "foodimage": "caesar_salad.jpg",
+      "foodcategory": "salad",
+      "price": 8.99,
+      "quantity": 18
+    },
+    {
+      "foodname": "Mango Sorbet",
+      "foodimage": "mango_sorbet.jpg",
+      "foodcategory": "dessert",
+      "price": 5.99,
+      "quantity": 22
+    },
+    {
+      "foodname": "Shrimp Scampi",
+      "foodimage": "shrimp_scampi.jpg",
+      "foodcategory": "seafood",
+      "price": 19.99,
+      "quantity": 11
+    },
+    {
+      "foodname": "Mushroom Risotto",
+      "foodimage": "mushroom_risotto.jpg",
+      "foodcategory": "rice",
+      "price": 13.99,
+      "quantity": 14
+    },
+    {
+      "foodname": "Berry Smoothie",
+      "foodimage": "berry_smoothie.jpg",
+      "foodcategory": "beverage",
+      "price": 7.99,
+      "quantity": 28
+    },
+    {
+      "foodname": "New York Cheesecake",
+      "foodimage": "new_york_cheesecake.jpg",
+      "foodcategory": "dessert",
+      "price": 10.99,
+      "quantity": 17
+    },
+    {
+      "foodname": "Eggplant Parmesan",
+      "foodimage": "eggplant_parmesan.jpg",
+      "foodcategory": "vegetarian",
+      "price": 16.99,
+      "quantity": 9
+    },
+    {
+      "foodname": "Tuna Sushi Roll",
+      "foodimage": "tuna_sushi_roll.jpg",
+      "foodcategory": "sushi",
+      "price": 17.99,
+      "quantity": 10
+    },
+    {
+      "foodname": "Greek Salad",
+      "foodimage": "greek_salad.jpg",
+      "foodcategory": "salad",
+      "price": 9.49,
+      "quantity": 21
+    },
+    {
+      "foodname": "Caramel Flan",
+      "foodimage": "caramel_flan.jpg",
+      "foodcategory": "dessert",
+      "price": 7.49,
+      "quantity": 23
+    },
+    {
+      "foodname": "Teriyaki Chicken",
+      "foodimage": "teriyaki_chicken.jpg",
+      "foodcategory": "meat",
+      "price": 14.99,
+      "quantity": 12
+    },
+    {
+      "foodname": "Avocado Toast",
+      "foodimage": "avocado_toast.jpg",
+      "foodcategory": "breakfast",
+      "price": 10.99,
+      "quantity": 15
+    },
+    {
+      "foodname": "Lemon Sorbet",
+      "foodimage": "lemon_sorbet.jpg",
+      "foodcategory": "dessert",
+      "price": 6.49,
+      "quantity": 26
+    },
+    {
+      "foodname": "Beef Burrito",
+      "foodimage": "beef_burrito.jpg",
+      "foodcategory": "burrito",
+      "price": 11.99,
+      "quantity": 13
+    },
+    {
+      "foodname": "Mint Mojito",
+      "foodimage": "mint_mojito.jpg",
+      "foodcategory": "beverage",
+      "price": 8.49,
+      "quantity": 29
+    },
+    {
+      "foodname": "Fruit Parfait",
+      "foodimage": "fruit_parfait.jpg",
+      "foodcategory": "dessert",
+      "price": 6.99,
+      "quantity": 20
+    },
+    {
+      "foodname": "Cheeseburger",
+      "foodimage": "cheeseburger.jpg",
+      "foodcategory": "burger",
+      "price": 13.49,
+      "quantity": 16
+    },
+    {
+      "foodname": "Iced Coffee",
+      "foodimage": "iced_coffee.jpg",
+      "foodcategory": "beverage",
+      "price": 4.99,
+      "quantity": 31
+    },
+    {
+      "foodname": "Veggie Wrap",
+      "foodimage": "veggie_wrap.jpg",
+      "foodcategory": "wrap",
+      "price": 9.99,
+      "quantity": 19
+    },
+    {
+      "foodname": "Tiramisu",
+      "foodimage": "tiramisu.jpg",
+      "foodcategory": "dessert",
+      "price": 8.99,
+      "quantity": 24
+    },
+    {
+      "foodname": "Pancakes",
+      "foodimage": "pancakes.jpg",
+      "foodcategory": "breakfast",
+      "price": 7.49,
+      "quantity": 17
+    },
+    {
+      "foodname": "Tandoori Chicken",
+      "foodimage": "tandoori_chicken.jpg",
+      "foodcategory": "indian",
+      "price": 15.99,
+      "quantity": 11
+    },
+    {
+      "foodname": "Spicy Tofu Stir-Fry",
+      "foodimage": "spicy_tofu_stir_fry.jpg",
+      "foodcategory": "vegetarian",
+      "price": 12.99,
+      "quantity": 14
+    },
+    {
+      "foodname": "Chai Latte",
+      "foodimage": "chai_latte.jpg",
+      "foodcategory": "beverage",
+      "price": 5.99,
+      "quantity": 22
+    },
+    {
+      "foodname": "Cobb Salad",
+      "foodimage": "cobb_salad.jpg",
+      "foodcategory": "salad",
+      "price": 10.49,
+      "quantity": 16
+    },
+    {
+      "foodname": "Creme Brulee",
+      "foodimage": "creme_brulee.jpg",
+      "foodcategory": "dessert",
+      "price": 7.99,
+      "quantity": 25
+    },
+    {
+      "foodname": "Pulled Pork Sandwich",
+      "foodimage": "pulled_pork_sandwich.jpg",
+      "foodcategory": "sandwich",
+      "price": 11.99,
+      "quantity": 9
+    },
+    {
+      "foodname": "Iced Tea",
+      "foodimage": "iced_tea.jpg",
+      "foodcategory": "beverage",
+      "price": 4.49,
+      "quantity": 27
+    },
+    {
+      "foodname": "Vegetable Curry",
+      "foodimage": "vegetable_curry.jpg",
+      "foodcategory": "indian",
+      "price": 13.99,
+      "quantity": 10
+    },
+    {
+      "foodname": "Garlic Bread",
+      "foodimage": "garlic_bread.jpg",
+      "foodcategory": "appetizer",
+      "price": 6.99,
+      "quantity": 12
+    },
+    {
+      "foodname": "Miso Soup",
+      "foodimage": "miso_soup.jpg",
+      "foodcategory": "soup",
+      "price": 4.99,
+      "quantity": 21
+    },
+    {
+      "foodname": "Tofu Scramble",
+      "foodimage": "tofu_scramble.jpg",
+      "foodcategory": "breakfast",
+      "price": 8.99,
+      "quantity": 15
+    },
+    {
+      "foodname": "Lentil Soup",
+      "foodimage": "lentil_soup.jpg",
+      "foodcategory": "soup",
+      "price": 5.99,
+      "quantity": 19
+    },
+    {
+      "foodname": "Churros",
+      "foodimage": "churros.jpg",
+      "foodcategory": "dessert",
+      "price": 7.49,
+      "quantity": 23
+    }
+  ]
+  

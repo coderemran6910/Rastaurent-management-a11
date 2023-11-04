@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import PopularCategory from "../components/PopularCategory/PopularCategory";
 import TopSelling from "../components/Top Selling Section/TopSelling";
+import Service from "../components/service/service";
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <TopSelling></TopSelling>
             <PopularCategory></PopularCategory>
+            <Service></Service>
         </div>
     );
 };

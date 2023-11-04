@@ -5,11 +5,13 @@ import AllFoods from "../pages/AllFoods"
 import Blog from "../pages/Blog"
 import LoginPage from "../pages/LoginPage"
 import RegisterPage from "../pages/RegisterPage"
+import Error404 from "../pages/Error404"
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <App></App>,
+        errorElement:<Error404></Error404>,
         children:[
             {
                 index: true,
