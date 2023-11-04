@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Chicken Alfredo",
+    "image": "chicken_alfredo.jpg",
+    "category": "Pasta",
+    "price": 15.99,
+    "button": "Learn More"
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "image": "margherita_pizza.jpg",
+    "category": "Pizza",
+    "price": 12.99,
+    "button": "Learn More"
+  },
+  {
+    "id": 3,
+    "name": "Grilled Salmon",
+    "image": "grilled_salmon.jpg",
+    "category": "Seafood",
+    "price": 18.99,
+    "button": "Learn More"
+  },
+  {
+    "id": 4,
+    "name": "Vegetable Stir-Fry",
+    "image": "vegetable_stir_fry.jpg",
+    "category": "Vegetarian",
+    "price": 14.99,
+    "button": "Learn More"
+  },
+  {
+    "id": 5,
+    "name": "Chocolate Fondue",
+    "image": "chocolate_fondue.jpg",
+    "category": "Dessert",
+    "price": 9.99,
+    "button": "Learn More"
+  },
+  {
+    "id": 6,
+    "name": "Tropical Smoothie",
+    "image": "tropical_smoothie.jpg",
+    "category": "Beverage",
+    "price": 6.99,
+    "button": "Learn More"
+  }
+]

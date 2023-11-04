@@ -1,11 +1,16 @@
-
+import Footer from "./components/Footer"
+import MainLayout from "./layout components/mainLayout"
+import {Outlet} from "react-router-dom"
 
 
 function App() {
 
   return (
     <>
-      <h1>Helolow word</h1>
+      <MainLayout>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </MainLayout>
     </>
   )
 }
