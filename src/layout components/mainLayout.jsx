@@ -4,55 +4,36 @@ import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import UserProfileModal from "../components/UserProfileModal";
 const MainLayout = ({ children }) => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-  const handleLOgOut = () => {
-    logOut()
-      .then(() => {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Logout successfully",
-          showConfirmButton: true,
-        });
-      })
-      .catch((error) => {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: error.message,
-          showConfirmButton: true,
-        });
-      });
-  };
+ 
 
   const menu = (
     <>
       <NavLink className="btn btn-ghost  " to={"/"}>
-        {" "}
-        Home{" "}
+        
+        Home
       </NavLink>
       <NavLink className="btn btn-ghost  " to={"/allfoods"}>
-        {" "}
-        All Foods{" "}
+        
+        All Foods
       </NavLink>
       <NavLink className="btn btn-ghost  " to={"/blog"}>
-        {" "}
-        Blog{" "}
+        
+        Blog
       </NavLink>
 
       {user ? (
         <>
-          <NavLink onClick={handleLOgOut} className="btn   bg-red-500  ">
-            {" "}
-            Log Out{" "}
+          <NavLink to={'/profile'} className="btn   bg-red-500 hover:bg-red-600 text-white">
+          Dashboard
           </NavLink>
         </>
       ) : (
         <>
           <NavLink className="btn btn-ghost  " to={"/login"}>
-            {" "}
-            Login{" "}
+            
+            Login
           </NavLink>
         </>
       )}
@@ -90,11 +71,11 @@ const MainLayout = ({ children }) => {
 
             {/* Logo */}
             <div className="flex-1 px-2 mx-2 text-3xl font-extrabold ">
-              {" "}
+              
               <span className="bg-[#39DB4A] text-white p-2 rounded-xl text-2xl">
                 Emran's
-              </span>{" "}
-              Food{" "}
+              </span>
+              Food
             </div>
 
             <div className="flex-none hidden lg:block">

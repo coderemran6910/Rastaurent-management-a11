@@ -3,8 +3,32 @@ import MainLayout from "./mainLayout";
 import { Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const UserLayout = () => {
-    const { user } = useContext(AuthContext);
+    
+  const { user , logOut } = useContext(AuthContext);
+    const handleLogOut=()=>{
+    logOut()
+    .then(()=>{
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Logged Out Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+        })
+    })
+    .catch((err)=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: err.message,  
+      })
+    })
+  }
+
+
+
   return (
     <div>
       <MainLayout>
@@ -20,6 +44,7 @@ const UserLayout = () => {
                 </div>
                 <h3 className="text-xl font-bold mt-5">{user?.displayName}</h3>
                 <strong className="mt-5 text-sm">{user?.email}</strong>
+                <button onClick={handleLogOut} className="btn btn-error mt-5 ">Log Out</button>
                 
               </div>
               </div>
