@@ -6,6 +6,11 @@ import Blog from "../pages/Blog"
 import LoginPage from "../pages/LoginPage"
 import RegisterPage from "../pages/RegisterPage"
 import Error404 from "../pages/Error404"
+import UserLayout from "../layout components/UserLayout"
+import MyOrder from "../pages/userPages/MyOrder"
+import MyFoods from "../pages/userPages/MyFoods"
+import AddFood from "../pages/userPages/AddFood"
+import PrivateRoute from "../components/PrivateRoute"
 
 const routes = createBrowserRouter([
     {
@@ -37,6 +42,26 @@ const routes = createBrowserRouter([
     {
         path: "/register",
         element:<RegisterPage></RegisterPage>
+    },
+
+    // User Layout
+    {
+        path: "/profile",
+        element: <PrivateRoute><UserLayout></UserLayout></PrivateRoute> ,
+        children:[
+            {
+                path: "myorders",
+                element: <MyOrder></MyOrder>
+            },
+            {
+                path: "myfoods",
+                element: <MyFoods></MyFoods>
+            },
+            {
+                path: "addfood",
+                element: <AddFood></AddFood>
+            }
+        ]
     }
 ])
 

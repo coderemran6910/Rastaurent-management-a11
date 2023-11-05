@@ -64,7 +64,7 @@ const MainLayout = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar bg-[#DCFCE7]">
           <div className="w-full max-w-7xl mx-auto">
             <div className="flex-none lg:hidden">
               <label
@@ -101,7 +101,9 @@ const MainLayout = ({ children }) => {
               <div className="menu menu-horizontal flex gap-10 justify-end items-center">
                 {menu}
 
-              <UserProfileModal></UserProfileModal>
+              {
+                user ? <UserProfileModal></UserProfileModal> : undefined
+              }
 
                 {/* <div className="avatar cursor-pointer">
                   <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ">

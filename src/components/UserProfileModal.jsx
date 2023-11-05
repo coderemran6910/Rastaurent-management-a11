@@ -1,5 +1,6 @@
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const UserProfileModal = () => {
   const { user } = useContext(AuthContext);
@@ -28,9 +29,9 @@ const UserProfileModal = () => {
             <img src={user?.photoURL} alt="User Avatar" />
           </div>
         </div>
-        <h3>{user?.displayName}</h3>
-        <strong>{user?.email}</strong>
-        <button className="btn btn-success mt-5">View Profile</button>
+        <h3 className="text-lg font-bold mt-5">{user?.displayName}</h3>
+        <strong className="mt-5">{user?.email}</strong>
+        <Link to={"/profile"}><button className="btn btn-success mt-5">View Profile</button></Link>
       </div>
   
       <form method="dialog" className="modal-backdrop">
