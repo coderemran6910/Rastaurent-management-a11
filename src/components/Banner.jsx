@@ -13,13 +13,14 @@ const Banner = () => {
     >
          <div
         style={{
-          background: "rgba(0, 0, 0, 0.819)",
+          background: "rgba(0, 0, 0, 0.717)",
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
         }}
+        className="rounded-xl"
       ></div>
      
       <div className="flex flex-1 flex-col justify-center z-50">

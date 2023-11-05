@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@lottiefiles/lottie-player": "^2.0.2",
     "axios": "^1.6.0",
+    "firebase": "^10.5.2",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.1",
