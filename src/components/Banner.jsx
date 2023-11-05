@@ -23,7 +23,7 @@ const Banner = () => {
         className="rounded-xl"
       ></div>
      
-      <div className="flex flex-1 flex-col justify-center z-50">
+      <div className="flex flex-1 flex-col justify-center z-10">
         <h1 className="text-3xl md:text-4xl mb-12 text-white">
           {" "}
           <span className="text-[#39DB4A] font-extrabold text-5xl ">

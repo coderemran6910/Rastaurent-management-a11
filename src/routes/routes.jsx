@@ -26,17 +26,18 @@ const routes = createBrowserRouter([
                 path: "blog",
                 element: <Blog></Blog>
             },
-            {
-                path: "/login",
-                element: <LoginPage></LoginPage>
-            },
-            {
-                path: "/register",
-                element:<RegisterPage></RegisterPage>
-            }
         ]
     },
-   
+
+    // Login. Register Layout 
+    {
+        path: "/login",
+        element: <LoginPage></LoginPage>
+    },
+    {
+        path: "/register",
+        element:<RegisterPage></RegisterPage>
+    }
 ])
 
 

@@ -71,7 +71,7 @@ const LoginPage = () => {
       });
   };
   return (
-    <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto">
+    <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto px-10">
       {/* Form */}
       <div className="hero min-h-screen">
         <div className="hero-content border rounded-xl">
