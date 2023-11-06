@@ -3,20 +3,34 @@ import SearchInput from "../utility/SearchInput";
 import { useState, useEffect } from "react";
 import SingleFood from "../components/SingleFood";
 import Title from "../utility/Title";
+import { useLoaderData } from "react-router-dom";
 
 const AllFoods = () => {
+
   const [allFood, setAllFood] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredFood, setFilteredFood] = useState([]);
 
+
+//   Pagination state 
+const [itemPerPage, setItemPerPage]= useState(10)
+const [currentPage, setCurrentPage] = useState(0)
+const { count } = useLoaderData();
+
+  const totalPage = Math.ceil(count / itemPerPage);
+
+  const pages = [...Array(totalPage).keys()];
+  
+
+
   useEffect(() => {
     // Fetch data from your API
-    axios.get("http://localhost:5000/api/v1/foods").then((res) => {
+    axios.get(`http://localhost:5000/api/v1/foods?page=${currentPage}&size=${itemPerPage}`).then((res) => {
       setAllFood(res.data);
       // Initialize filteredFood with allFood
       setFilteredFood(res.data);
     });
-  }, []);
+  }, [currentPage, itemPerPage ]);
 
   // Function to handle search input change
   const handleSearchInputChange = (event) => {
@@ -28,6 +42,13 @@ const AllFoods = () => {
     );
     setFilteredFood(filteredResults);
   };
+
+  const handleItemPerPage =(e)=>{
+    const val = parseInt(e.target.value)
+    setItemPerPage(val)
+    setCurrentPage(0)
+  }
+
 
   return (
     <div className="container mx-auto max-w-7xl">
@@ -149,6 +170,33 @@ const AllFoods = () => {
         {filteredFood.map((food) => (
           <SingleFood key={food.foodname} food={food}></SingleFood>
         ))}
+      </div>
+
+
+      {/* Pagination  */}
+      <p className="mt-20 flex items-center justify-center">current page: {currentPage}</p>
+      <div className=" flex flex-wrap mt-5  justify-center items-center ">
+       
+        <button onClick={()=>currentPage>0 && setCurrentPage(currentPage-1)} className="mr-10 btn btn-success">prev</button>
+        {pages.map((page) => (
+          <button
+          onClick={()=>setCurrentPage(page)} 
+          className={`w-10 h-10 rounded-full mr-5 bg-base-300 ${currentPage === page && 'active'} `}
+          key={page}>
+            {page}
+          </button>
+        ))}
+        <button onClick={()=> currentPage < pages.length-1 && setCurrentPage(currentPage+1)} className="btn btn-success mr-5">next</button>
+        <div className="ml-10">
+            <select value={itemPerPage} onChange={handleItemPerPage}>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+            </select>
+        </div>
       </div>
     </div>
   );
