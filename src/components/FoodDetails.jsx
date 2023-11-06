@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const FoodDetails = () => {
     const detailsFood = useLoaderData()
@@ -17,7 +17,7 @@ const FoodDetails = () => {
             <p className="py-6">Origin: {country}</p>
             <p className="py-6">Category: <span className=" text-bold">{category}</span></p>
             <p className="py-6">Made By: <span className="text-red-400 text-xl">{auth}</span></p>
-            <button className="btn bg-[#39DB4A]">Order</button>
+            <Link to={`/foodpurchase/${_id}`} className="btn bg-[#39DB4A]">Order</Link>
           </div>
         </div>
       </div>

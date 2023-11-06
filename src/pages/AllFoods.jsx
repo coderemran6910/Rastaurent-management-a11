@@ -5,7 +5,6 @@ import Title from "../utility/Title";
 import { useLoaderData } from "react-router-dom";
 
 const AllFoods = () => {
-
   const [allFood, setAllFood] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredFood, setFilteredFood] = useState([]);
@@ -37,7 +36,7 @@ const { count } = useLoaderData();
     setSearchQuery(query);
     // Filter the allFood array based on the search query
     const filteredResults = allFood.filter((food) =>
-      food.name.toLowerCase().includes(searchQuery)
+      food.name.toLowerCase().includes(query)
     );
     setFilteredFood(filteredResults);
   };
@@ -163,10 +162,10 @@ const { count } = useLoaderData();
         {/* Srarch Box end */}
       </div>
 
-      <Title> All Foods: {filteredFood.length} </Title>
+      <Title> All Foods: {filteredFood?.length} </Title>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  justify-items-center">
-        {filteredFood.map((food) => (
+        {filteredFood?.map((food) => (
           <SingleFood key={food.foodname} food={food}></SingleFood>
         ))}
       </div>
@@ -177,7 +176,7 @@ const { count } = useLoaderData();
       <div className=" flex flex-wrap mt-5  justify-center items-center ">
        
         <button onClick={()=>currentPage>0 && setCurrentPage(currentPage-1)} className="mr-10 btn btn-success">prev</button>
-        {pages.map((page) => (
+        {pages?.map((page) => (
           <button
           onClick={()=>setCurrentPage(page)} 
           className={`w-10 h-10 rounded-full mr-5 bg-base-300 ${currentPage === page && 'active'} `}
