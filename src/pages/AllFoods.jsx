@@ -1,5 +1,4 @@
 import axios from "axios";
-import SearchInput from "../utility/SearchInput";
 import { useState, useEffect } from "react";
 import SingleFood from "../components/SingleFood";
 import Title from "../utility/Title";
@@ -12,7 +11,7 @@ const AllFoods = () => {
   const [filteredFood, setFilteredFood] = useState([]);
 
 
-//   Pagination state 
+//   Pagination state
 const [itemPerPage, setItemPerPage]= useState(10)
 const [currentPage, setCurrentPage] = useState(0)
 const { count } = useLoaderData();
@@ -166,7 +165,7 @@ const { count } = useLoaderData();
 
       <Title> All Foods: {filteredFood.length} </Title>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5  justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  justify-items-center">
         {filteredFood.map((food) => (
           <SingleFood key={food.foodname} food={food}></SingleFood>
         ))}
