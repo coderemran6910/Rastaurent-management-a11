@@ -13,6 +13,7 @@ import AddFood from "../pages/userPages/AddFood"
 import PrivateRoute from "../components/PrivateRoute"
 import FoodDetails from "../components/FoodDetails"
 import FoodPurchas from "../pages/FoodPurchas"
+import UpdateFood from "../pages/userPages/UpdateFood"
 
 const routes = createBrowserRouter([
     {
@@ -65,8 +66,9 @@ const routes = createBrowserRouter([
         children:[
             {
                 index:true, 
-                path: "myfoods",
-                element: <MyFoods></MyFoods>
+                path: "myfoods/:email",
+                element: <MyFoods></MyFoods>,
+                loader: ({params})=> fetch (`http://localhost:5000/api/v1/products/${params.email}`)
             },
             {
                 path:"orders/:email",
@@ -76,10 +78,16 @@ const routes = createBrowserRouter([
             {
                 path: "addfood",
                 element: <AddFood></AddFood>
+            },
+            {
+                path:"updatefood/:id",
+                element: <UpdateFood></UpdateFood>,
+                loader: ({params})=> fetch (`http://localhost:5000/api/v1/foods/${params.id}`)
+
             }
         ]
     }
 ])
 
 
-export default routes
+export default routes 

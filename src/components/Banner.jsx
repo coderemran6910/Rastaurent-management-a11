@@ -13,7 +13,7 @@ const Banner = () => {
     >
          <div
         style={{
-          background: "rgba(0, 0, 0, 0.717)",
+          background: "rgba(0, 0, 0, 0.569)",
           position: "absolute",
           top: 0,
           left: 0,

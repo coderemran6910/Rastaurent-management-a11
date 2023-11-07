@@ -54,7 +54,7 @@ const UserLayout = () => {
               </div>
 
             <div className="flex flex-col items-center px-5">
-                <Link className="btn btn-success w-full mt-5 text-white font-bold" to={'/profile/myfoods'}>Uploaded Foods</Link>
+                <Link className="btn btn-success w-full mt-5 text-white font-bold" to={`/profile/myfoods/${user.email}`}>Uploaded Foods</Link>
                 <Link className="btn btn-success w-full mt-5 text-white font-bold" to={'/profile/addfood'}>Add Food</Link>
                 <Link className="btn btn-success w-full mt-5 text-white font-bold" to={`/profile/orders/${user?.email}`}>My Order</Link>
             </div>

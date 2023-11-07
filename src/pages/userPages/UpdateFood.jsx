@@ -1,79 +1,86 @@
-import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 import Title from "../../utility/Title";
 import axios from "axios";
-import { AuthContext } from "../../provider/AuthProvider";
-import { useContext } from "react";
-const AddFood = () => {
-    const {user} = useContext(AuthContext)
+import Swal from "sweetalert2";
 
-    const handleAddFood = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const price = parseFloat(form.price.value);
-        const image = form.image.value;
-        const quantity = parseInt(form.quantity.value, 10);
-        const category = form.category.value;
-        const description = form.description.value;
-        const country = form.country.value;
-    
-        if (isNaN(price) || isNaN(quantity)) {
+const UpdateFood = () => {
+    const {user} = useContext(AuthContext)
+    const foodData = useLoaderData()
+    const { name, price, image, quantity, category, description, country } = foodData
+    // console.log('update Data' , foodData);
+const handleUpdateFood = (event) =>{
+    event.preventDefault()
+    const form = event.target;
+    const name = form.name.value;
+    const price = parseFloat(form.price.value);
+    const image = form.image.value;
+    const quantity = parseInt(form.quantity.value, 10);
+    const category = form.category.value;
+    const description = form.description.value;
+    const country = form.country.value;
+
+    const updatedData ={
+        name,
+        price,
+        image,
+        quantity,
+        category,
+        description,
+        country
+    }
+    console.log(updatedData);
+
+    fetch(`http://localhost:5000/api/v1/foods/${foodData._id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.modifiedCount > 0){
             Swal.fire({
-                icon: 'error',
-                title: 'Invalid Input',
-                text: 'Price and Quantity must be valid numbers.',
-            });
-        } else {
-            const foodData = {
-                name,
-                price,
-                image,
-                quantity,
-                category,
-                description,
-                country,
-                auth: user.displayName,
-                authEmail: user.email
-            };
-    
-            axios.post("http://localhost:5000/api/v1/foods", foodData)
-                .then((res) => {
-                    if (res.data.insertedId) {
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Food added successfully',
-                            showConfirmButton: false,
-                            timer: 1500,
-                        });
-                        form.reset(); // Clear the form after success
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Failed to add the food.',
-                        });
-                    }
-                })
-                .catch((error) => {
-                    console.log(error)
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'An error occurred while adding the food. Please try again later.',
-                    });
-                });
+                position: 'center',
+                icon: 'success',
+                title: 'Food updated successfully',
+                showConfirmButton: true,
+            })
         }
-    };
-    
+    })
+    .catch(err => console.log(err))
+
+
+
+
+
+
+//     axios.patch(`http://localhost:5000/api/v1/foods/${foodData._id}`, updatedData, {
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// })
+// .then(res => {
+//   Swal.fire({
+//     position: 'center',
+//     icon: 'success',
+//     title: 'Food updated successfully',
+//     showConfirmButton: true,
+//   })
+// })
+// .catch(err => console.log(err))
+
+}
 
     return (
-        <div className=" px-10">
+           <div className=" px-10">
         <div className="py-10">
         <Title>Add a Product</Title>
         <p className="text-center text-md md:text-xl  md:max-w-7xl mx-auto mt-5"> You can add a new product by filling the form below.  </p>
         </div>
-        <form onSubmit={handleAddFood} className="max-w-7xl mx-auto  ">
+        <form  onSubmit={handleUpdateFood} className="max-w-7xl mx-auto  ">
 
             {/* Name and Price */}
           <div className="md:flex mb-8 gap-5">
@@ -83,6 +90,7 @@ const AddFood = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={name}
                   type="text"
                   name="name"
                   placeholder="Product Name"
@@ -97,6 +105,7 @@ const AddFood = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={price}
                   type="text"
                   name="price"
                   placeholder="Price"
@@ -115,6 +124,7 @@ const AddFood = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={image}
                   type="text"
                   name="image"
                   placeholder="Product Image"
@@ -129,6 +139,7 @@ const AddFood = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={quantity}
                   type="text"
                   name="quantity"
                   placeholder="Quantity"
@@ -145,7 +156,7 @@ const AddFood = () => {
               <label className="label">
                 <span className="label-text">Choose a Type</span>
               </label>
-              <select name="category" type="text" className="select select-bordered w-full ">
+              <select defaultValue={category} name="category" type="text" className="select select-bordered w-full ">
                 <option value="pizza">pizza</option>
                 <option value="meat">meat</option>
                 <option value="salad">salad</option>
@@ -163,6 +174,7 @@ const AddFood = () => {
                 <span className="label-text w-full text-center">Food Description</span>
               </label>
               <textarea
+              defaultValue={description}
                 placeholder="Food Description"
                 className="input input-bordered w-full"
                 name="description"
@@ -175,6 +187,7 @@ const AddFood = () => {
               </label>
               <label className="input-group">
                 <input
+                defaultValue={country}
                   type="text"
                   name="country"
                   placeholder="Food Origin"
@@ -196,4 +209,4 @@ const AddFood = () => {
     );
 };
 
-export default AddFood;
+export default UpdateFood;

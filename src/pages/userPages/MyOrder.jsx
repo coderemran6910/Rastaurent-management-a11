@@ -1,13 +1,35 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Title from "../../utility/Title";
+import AvaterDefault from "../../utility/AvaterDefault";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useState } from "react";
 
 const MyOrder = () => {
   const myOrder = useLoaderData();
+  const [reminingOrder, setReminingOrder] = useState(myOrder)
+
+  const handleDelete=(id)=>{
+    axios.delete(`http://localhost:5000/api/v1/orders/${id}`)
+    .then((res)=>{ 
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Product delete success",
+        showConfirmButton: true,
+      })
+
+      const filterOrder = myOrder.filter(order=> order._id !== id);
+      setReminingOrder(filterOrder);
+
+    })
+    .catch(err=> console.log(err))
+  }
 
   return (
     <>
       <div className="overflow-x-auto">
-        <Title>My {myOrder.length} Orders</Title>
+        <Title>My {myOrder?.length} Orders</Title>
   <table className="table">
     {/* head */}
     <thead>
@@ -25,9 +47,11 @@ const MyOrder = () => {
     </thead>
     <tbody>
       {
-        myOrder?.map(order=>{
+        reminingOrder?.map(order=>{
             const { _id, name, buyerName ,buyerEmail ,  image, } =order;
            console.log(order);
+
+           
             {/* row 1 */}
      return(
         <>
@@ -41,7 +65,7 @@ const MyOrder = () => {
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img src={image} alt="Avatar Tailwind CSS Component" />
+              <img src={image ? image : <AvaterDefault></AvaterDefault>} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
           <div>
@@ -55,7 +79,7 @@ const MyOrder = () => {
       </td>
       <td>{_id}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">Delete</button>
+        <Link onClick={()=>handleDelete(_id)} className="btn btn-error btn-sm">Delete</Link>
       </th>
     </tr>
         </>
