@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import Title from "../utility/Title";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const FoodPurchas = () => {
+  const [orderCount, setOrderCount] = useState(0);
     const {user} = useContext(AuthContext)
     const orderFood = useLoaderData()
     const { _id, name, price, image, quantity, category, country, auth, description } =orderFood;
@@ -25,6 +26,7 @@ const FoodPurchas = () => {
         axios.post("http://localhost:5000/api/v1/orders", orderData)
         .then(res=>{
             if(res.data.insertedId){
+              setOrderCount(orderCount + 1)
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -41,6 +43,8 @@ const FoodPurchas = () => {
         })
 
     }
+
+    console.log(orderCount);
     return (
         <div className=" w-full max-w-7xl mx-auto">
         <div className="py-10">

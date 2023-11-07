@@ -17,7 +17,7 @@ const Service = () => {
             hospitality.
           </p>
 
-        <Link className="btn  btn-success mt-20" to={"/blogs"}>Blogs</Link>
+        <Link className="btn  btn-success mt-20" to={"/blog"}>Blogs</Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 flex-1">
