@@ -5,8 +5,12 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const UserLayout = () => {
-    
   const { user , logOut } = useContext(AuthContext);
+
+//   axios.get(`http://localhost:5000/api/v1/orders/${user.email}`)
+// .then(res=> console.log(res.data))
+    
+ 
     const handleLogOut=()=>{
     logOut()
     .then(()=>{
@@ -52,7 +56,7 @@ const UserLayout = () => {
             <div className="flex flex-col items-center px-5">
                 <Link className="btn btn-success w-full mt-5 text-white font-bold" to={'/profile/myfoods'}>Uploaded Foods</Link>
                 <Link className="btn btn-success w-full mt-5 text-white font-bold" to={'/profile/addfood'}>Add Food</Link>
-                <Link className="btn btn-success w-full mt-5 text-white font-bold" to={'/profile/myorders'}>My Order</Link>
+                <Link className="btn btn-success w-full mt-5 text-white font-bold" to={`/profile/orders/${user?.email}`}>My Order</Link>
             </div>
 
 

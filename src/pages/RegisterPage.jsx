@@ -7,11 +7,10 @@ import Title from "../utility/Title";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { updateProfile } from "firebase/auth";
 const RegisterPage = () => {
-  
-const {createUser, googleSignIn}= useContext(AuthContext);
-
-
+  const { createUser, googleSignIn } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -24,29 +23,61 @@ const {createUser, googleSignIn}= useContext(AuthContext);
     const password = form.password.value;
     // console.log(name, email, password, image);
 
-
-    createUser(email, password)
-    .then(result=>{
+    createUser(email, password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'User created successfully',
-        showConfirmButton: true,
+
+      // Update user profile with username and image URL
+      updateProfile(loggedUser, {
+        displayName: name,
+        photoURL: image,
       })
-    })
-    .catch(error=>{
-      console.log(error);
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: error.message,
-        showConfirmButton: true,
-      })
-    })
+        .then(() => {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "User created successfully",
+            showConfirmButton: true,
+          });
 
 
+
+
+            const user = {
+              name,
+              email,
+              image,
+              password
+            }
+             axios.post('http://localhost:5000/api/v1/users', user)
+            .then(res=>{
+              console.log(res.data);
+              
+            })
+            .catch((err)=>{
+              console.log(err);
+            })
+          
+
+
+
+
+
+
+
+
+
+        })
+        .catch((error) => {
+          console.log(error);
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: error.message,
+            showConfirmButton: true,
+          });
+        });
+    });
   };
 
   const handleGoogleSignIn = () => {
@@ -59,7 +90,7 @@ const {createUser, googleSignIn}= useContext(AuthContext);
           icon: "success",
           title: "Login successfully",
           showConfirmButton: true,
-        })
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -69,7 +100,7 @@ const {createUser, googleSignIn}= useContext(AuthContext);
           icon: "error",
           title: error.message,
           showConfirmButton: true,
-        })
+        });
       });
   };
   return (
@@ -138,7 +169,7 @@ const {createUser, googleSignIn}= useContext(AuthContext);
               <p>
                 Already have an account?{" "}
                 <strong className="text-[#39DB4A]">
-                  <Link to={"/login"}>Login</Link>{" "}
+                  <Link to={"/login"}>Register</Link>{" "}
                 </strong>{" "}
               </p>
             </label>
@@ -153,8 +184,7 @@ const {createUser, googleSignIn}= useContext(AuthContext);
 
         {/* Social Login */}
         <div className="flex items-center justify-center">
-          
-        <button
+          <button
             onClick={handleGoogleSignIn}
             type="button"
             className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"

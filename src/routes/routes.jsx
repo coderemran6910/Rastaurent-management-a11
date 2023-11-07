@@ -60,15 +60,18 @@ const routes = createBrowserRouter([
     // User Layout
     {
         path: "/profile",
+        errorElement: <Error404></Error404>,
         element: <PrivateRoute><UserLayout></UserLayout></PrivateRoute> ,
         children:[
             {
-                path: "myorders",
-                element: <MyOrder></MyOrder>
-            },
-            {
+                index:true, 
                 path: "myfoods",
                 element: <MyFoods></MyFoods>
+            },
+            {
+                path:"orders/:email",
+                element: <MyOrder></MyOrder>,
+                loader:({params})=> fetch(`http://localhost:5000/api/v1/orders/${params?.email}`)
             },
             {
                 path: "addfood",

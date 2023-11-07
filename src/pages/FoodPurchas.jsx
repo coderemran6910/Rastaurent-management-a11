@@ -18,6 +18,7 @@ const FoodPurchas = () => {
             name,
             price,
             quantity,
+            image,
             date : new Date(),
             buyerName: user.displayName,
             buyerEmail: user.email
