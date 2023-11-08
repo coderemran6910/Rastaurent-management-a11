@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const FoodPurchas = () => {
   const [orderCount, setOrderCount] = useState(0);
@@ -48,6 +49,7 @@ const FoodPurchas = () => {
     console.log(orderCount);
     return (
         <div className=" w-full max-w-7xl mx-auto">
+        <Helmet><title> Food Purchas  </title></Helmet>
         <div className="py-10">
         <Title> Purchase this product  </Title>
        

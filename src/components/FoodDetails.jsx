@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const FoodDetails = () => {
@@ -7,6 +8,7 @@ const FoodDetails = () => {
     console.log(detailsFood);
     return (
         <div className="hero min-h-screen bg-base-200">
+          <Helmet><title> Details-{name} </title></Helmet>
         <div className="hero-content flex-col lg:flex-row-reverse ">
           <img src={image} className="max-w-xl rounded-lg shadow-2xl" />
           <div className="card flex-shrink-0 w-full max-w-2xl shadow-2xl bg-base-100  p-5 ">

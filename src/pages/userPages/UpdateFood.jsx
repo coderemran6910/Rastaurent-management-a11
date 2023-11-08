@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Title from "../../utility/Title";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const UpdateFood = () => {
     const {user} = useContext(AuthContext)
@@ -76,6 +77,8 @@ const handleUpdateFood = (event) =>{
 
     return (
            <div className=" px-10">
+                    <Helmet><title> Update Food  </title></Helmet>
+
         <div className="py-10">
         <Title>Add a Product</Title>
         <p className="text-center text-md md:text-xl  md:max-w-7xl mx-auto mt-5"> You can add a new product by filling the form below.  </p>

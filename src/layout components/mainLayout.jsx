@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import Swal from "sweetalert2";
 import UserProfileModal from "../components/UserProfileModal";
+import { Helmet } from 'react-helmet-async';
+
+
 const MainLayout = ({ children }) => {
   const { user } = useContext(AuthContext);
 
@@ -42,6 +44,8 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className="drawer">
+
+      <title>Home Page </title>
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col ">
         {/* Navbar */}

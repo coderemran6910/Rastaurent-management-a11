@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SingleFood from "../components/SingleFood";
 import Title from "../utility/Title";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AllFoods = () => {
   const [allFood, setAllFood] = useState([]);
@@ -52,6 +53,7 @@ console.log(count)
 
   return (
     <div className="container mx-auto max-w-7xl">
+      <Helmet><title> All Foods </title></Helmet>
       <div className="py-10">
         {/* <SearchInput onChange={handleSearchInputChange} value={searchQuery} /> */}
         {/* Srarch Box start */}

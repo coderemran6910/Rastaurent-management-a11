@@ -3,6 +3,7 @@ import Title from "../../utility/Title";
 import axios from "axios";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 const AddFood = () => {
     const {user} = useContext(AuthContext)
 
@@ -69,6 +70,8 @@ const AddFood = () => {
 
     return (
         <div className=" px-10">
+                  <Helmet><title>Add Foods</title></Helmet>
+
         <div className="py-10">
         <Title>Add a Product</Title>
         <p className="text-center text-md md:text-xl  md:max-w-7xl mx-auto mt-5"> You can add a new product by filling the form below.  </p>

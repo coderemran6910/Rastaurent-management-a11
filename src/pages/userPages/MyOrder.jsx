@@ -4,6 +4,7 @@ import AvaterDefault from "../../utility/AvaterDefault";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const MyOrder = () => {
   const myOrder = useLoaderData();
@@ -28,6 +29,8 @@ const MyOrder = () => {
 
   return (
     <>
+            <Helmet><title> My Orders  </title></Helmet>
+
       <div className="overflow-x-auto">
         <Title>My {myOrder?.length} Orders</Title>
   <table className="table">

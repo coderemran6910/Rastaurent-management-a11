@@ -9,6 +9,7 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 const RegisterPage = () => {
   const { createUser, googleSignIn } = useContext(AuthContext);
 
@@ -105,6 +106,8 @@ const RegisterPage = () => {
   };
   return (
     <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto">
+              <Helmet><title> Register </title></Helmet>
+
       {/* Form */}
       <div className="hero min-h-screen">
         <div className="hero-content border rounded-xl">

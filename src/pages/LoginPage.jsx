@@ -7,6 +7,7 @@ import Title from "../utility/Title";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 const LoginPage = () => {
   const location = useLocation()
   const goTo = useNavigate()
@@ -76,6 +77,8 @@ const LoginPage = () => {
   };
   return (
     <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto px-10">
+              <Helmet><title> Login  </title></Helmet>
+
       {/* Form */}
       <div className="hero min-h-screen">
         <div className="hero-content border rounded-xl">

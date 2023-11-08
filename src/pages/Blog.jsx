@@ -1,9 +1,11 @@
-import Title from "../utility/Title";
+import { Helmet } from "react-helmet-async";
+
 
 const Blog = () => {
     return (
       <div className="bg-gray-100 w-full max-w-7xl mx-auto">
-    
+            <Helmet><title> Our Blogs  </title></Helmet>
+
          <div className="">
             <h1 className="text-5xl font-extrabold text-[#39DB4A] py-10 border-b-4">Our Blogs</h1>
             <div className="bg-gray-100 min-h-screen mt-5">

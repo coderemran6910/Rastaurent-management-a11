@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Title from "../../utility/Title";
 import AvaterDefault from "../../utility/AvaterDefault";
+import { Helmet } from "react-helmet-async";
 
 const MyFoods = () => {
     const myFood = useLoaderData()
@@ -8,7 +9,9 @@ const MyFoods = () => {
     return (
         <>
         <div className="overflow-x-auto">
-          <Title>My {myFood?.length} My added foods</Title>
+        <Helmet><title> My Foods </title></Helmet>
+
+          <Title>My {myFood?.length} added foods</Title>
     <table className="table">
       {/* head */}
       <thead>
