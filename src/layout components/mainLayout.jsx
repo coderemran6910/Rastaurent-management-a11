@@ -41,9 +41,9 @@ const MainLayout = ({ children }) => {
   );
 
   return (
-    <div className="drawer z-10">
+    <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
+      <div className="drawer-content flex flex-col ">
         {/* Navbar */}
         <div className="w-full navbar bg-[#DCFCE7]">
           <div className="w-full max-w-7xl mx-auto">
@@ -70,7 +70,7 @@ const MainLayout = ({ children }) => {
             </div>
 
             {/* Logo */}
-            <div className="flex-1 px-2 mx-2 text-3xl font-extrabold ">
+            <div className="flex-1 px-2 text-right lg:text-left text-3xl font-extrabold ">
               
               <span className="bg-[#39DB4A] text-white p-2 rounded-xl text-2xl">
                 Emran's
@@ -100,15 +100,18 @@ const MainLayout = ({ children }) => {
         {/* Page content here */}
         {children}
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side " style={{zIndex:3 }}>
         <label
           htmlFor="my-drawer-3"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu p-4 w-80 min-h-full bg-base-200">
+        <div className="menu p-4 w-60 md:w-80  min-h-full bg-base-200 flex flex-col items-center gap-5 ">
           {/* Sidebar content here */}
           {menu}
+           {
+                user ? <UserProfileModal></UserProfileModal> : undefined
+          }
         </div>
       </div>
     </div>

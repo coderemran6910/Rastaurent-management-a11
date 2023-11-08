@@ -29,17 +29,17 @@ const routes = createBrowserRouter([
             {
                 path: "allfoods",
                 element: <AllFoods></AllFoods>,
-                loader: ()=> fetch('http://localhost:5000/api/v1/foodcount')
+                loader: ()=>fetch('https://restaurent-server.vercel.app/api/v1/foodcount')
             },
             {
                 path: "allfoods/:id",
                 element: <FoodDetails></FoodDetails>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
+                loader: ({params})=> fetch(`https://restaurent-server.vercel.app/api/v1/foods/${params.id}`)
             },
             {
                 path: "foodpurchase/:id",
                 element: <PrivateRoute><FoodPurchas></FoodPurchas></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
+                loader: ({params})=> fetch(`https://restaurent-server.vercel.app/api/v1/foods/${params.id}`)
             },
             {
                 path: "blog",
@@ -65,24 +65,24 @@ const routes = createBrowserRouter([
         element: <PrivateRoute><UserLayout></UserLayout></PrivateRoute> ,
         children:[
             {
-                index:true, 
                 path: "myfoods/:email",
                 element: <MyFoods></MyFoods>,
-                loader: ({params})=> fetch (`http://localhost:5000/api/v1/products/${params.email}`)
+                loader: ({params})=> fetch (`https://restaurent-server.vercel.app/api/v1/products/${params.email}`)
             },
             {
                 path:"orders/:email",
                 element: <MyOrder></MyOrder>,
-                loader:({params})=> fetch(`http://localhost:5000/api/v1/orders/${params?.email}`)
+                loader:({params})=> fetch(`https://restaurent-server.vercel.app/api/v1/orders/${params?.email}`)
             },
             {
-                path: "addfood",
+                index:true,
+                path: "/profile",
                 element: <AddFood></AddFood>
             },
             {
                 path:"updatefood/:id",
                 element: <UpdateFood></UpdateFood>,
-                loader: ({params})=> fetch (`http://localhost:5000/api/v1/foods/${params.id}`)
+                loader: ({params})=> fetch (`https://restaurent-server.vercel.app/api/v1/foods/${params.id}`)
 
             }
         ]

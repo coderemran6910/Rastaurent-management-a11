@@ -13,17 +13,19 @@ const AllFoods = () => {
 //   Pagination state
 const [itemPerPage, setItemPerPage]= useState(10)
 const [currentPage, setCurrentPage] = useState(0)
-const { count } = useLoaderData();
+const  {count}  = useLoaderData();
+console.log(count)
 
   const totalPage = Math.ceil(count / itemPerPage);
+  console.log(totalPage)
 
-  const pages = [...Array(totalPage).keys()];
+  const pages =[...Array(totalPage).keys()];
+  console.log(pages)
   
 
 
   useEffect(() => {
-    // Fetch data from your API
-    axios.get(`http://localhost:5000/api/v1/foods?page=${currentPage}&size=${itemPerPage}`).then((res) => {
+    axios.get(`https://restaurent-server.vercel.app/api/v1/foods?page=${currentPage}&size=${itemPerPage}`).then((res) => {
       setAllFood(res.data);
       // Initialize filteredFood with allFood
       setFilteredFood(res.data);

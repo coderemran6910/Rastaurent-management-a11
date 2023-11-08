@@ -36,7 +36,7 @@ const AddFood = () => {
                 authEmail: user.email
             };
     
-            axios.post("http://localhost:5000/api/v1/foods", foodData)
+            axios.post("https://restaurent-server.vercel.app/api/v1/foods", foodData)
                 .then((res) => {
                     if (res.data.insertedId) {
                         Swal.fire({

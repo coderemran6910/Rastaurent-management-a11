@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import {
-    createUserWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -8,54 +8,69 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../config/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  
-
-//create User 
+  //create User
   const createUser = (email, password) => {
     setIsLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-//   Sign In user
+  //   Sign In user
   const signIn = (email, password) => {
     setIsLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-
-// Sign Out 
+  // Sign Out
   const logOut = () => {
     setIsLoading(true);
     return signOut(auth);
   };
- 
 
-//   Google Sign In
-const googleProvider = new GoogleAuthProvider();
-const googleSignIn = () => {
-  return signInWithPopup(auth, googleProvider);
-}
+  //   Google Sign In
+  const googleProvider = new GoogleAuthProvider();
+  const googleSignIn = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
 
-
-useEffect(() => {
+  useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
-        setIsLoading(false);
+      const loogedEmail = currentUser?.email || user?.email;
+      const loggedUser = { user: loogedEmail };
+
+      setUser(currentUser);
+      setIsLoading(false);
+
+      // Token related code
+
+      if (currentUser) {
+        axios
+          .post("https://restaurent-server.vercel.app/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => console.log(res.data))
+          .catch((err) => console.log(err));
+      } else {
+        axios
+          .post("https://restaurent-server.vercel.app/logout", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => console.log(res.data))
+          .catch((err) => console.log(err));
+      }
+
     });
     return () => {
-        unSubscribe();
+      unSubscribe();
     };
-},[])
-
-
+  }, [user?.email]);
 
   const userInfo = {
     user,
@@ -63,7 +78,7 @@ useEffect(() => {
     signIn,
     logOut,
     googleSignIn,
-    isLoading
+    isLoading,
   };
 
   return (

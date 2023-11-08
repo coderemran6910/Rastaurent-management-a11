@@ -24,7 +24,7 @@ const FoodPurchas = () => {
             buyerEmail: user.email
         }
 
-        axios.post("http://localhost:5000/api/v1/orders", orderData)
+        axios.post("https://restaurent-server.vercel.app/api/v1/orders", orderData)
         .then(res=>{
             if(res.data.insertedId){
               setOrderCount(orderCount + 1)

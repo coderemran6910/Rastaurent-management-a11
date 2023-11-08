@@ -49,7 +49,7 @@ const RegisterPage = () => {
               image,
               password
             }
-             axios.post('http://localhost:5000/api/v1/users', user)
+             axios.post('https://restaurent-server.vercel.app/api/v1/users', user)
             .then(res=>{
               console.log(res.data);
               

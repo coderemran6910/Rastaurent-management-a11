@@ -1,13 +1,14 @@
 // import registerAniMation from "../assets/register.json";
 // import Lottie from "lottie-react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import registerIcon from "../assets/login.png";
 import Title from "../utility/Title";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 const LoginPage = () => {
+  const location = useLocation()
   const goTo = useNavigate()
   const {signIn , googleSignIn} = useContext(AuthContext);
   const handleLogin = (e) => {
@@ -32,7 +33,7 @@ const LoginPage = () => {
           title: "Login successfully",
           showConfirmButton: true,
         })
-        goTo('/')
+        goTo(location?.state || '/')
       })
       .catch((error) => {
         console.log(error);

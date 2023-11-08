@@ -32,7 +32,7 @@ const handleUpdateFood = (event) =>{
     }
     console.log(updatedData);
 
-    fetch(`http://localhost:5000/api/v1/foods/${foodData._id}`, {
+    fetch(`https://restaurent-server.vercel.app/api/v1/foods/${foodData._id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const handleUpdateFood = (event) =>{
 
 
 
-//     axios.patch(`http://localhost:5000/api/v1/foods/${foodData._id}`, updatedData, {
+//     axios.patch(`https://restaurent-server.vercel.app/api/v1/foods/${foodData._id}`, updatedData, {
 //   headers: {
 //     'Content-Type': 'application/json',
 //   },

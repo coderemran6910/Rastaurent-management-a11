@@ -10,7 +10,7 @@ const MyOrder = () => {
   const [reminingOrder, setReminingOrder] = useState(myOrder)
 
   const handleDelete=(id)=>{
-    axios.delete(`http://localhost:5000/api/v1/orders/${id}`)
+    axios.delete(`https://restaurent-server.vercel.app/api/v1/orders/${id}`)
     .then((res)=>{ 
       Swal.fire({
         position: "center",

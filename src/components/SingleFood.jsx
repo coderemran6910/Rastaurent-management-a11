@@ -7,7 +7,7 @@ const SingleFood = ({ food }) => {
 
   
   useEffect(()=>{
-     axios.get(`http://localhost:5000/api/v1/foods/${_id}`)
+     axios.get(`https://restaurent-server.vercel.app/api/v1/foods/${_id}`)
      .then(res=> console.log(res))
   }, [_id])
 
