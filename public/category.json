@@ -1,0 +1,19 @@
+[
+    {
+      "Category": "Pizza",
+      "Image": "https://cdn.pixabay.com/photo/2016/10/10/01/56/donut-1727492_640.png"
+    },
+    {
+      "Category": "Burgers",
+      "Image": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_640.png"
+    },
+    {
+      "Category": "Sushi",
+      "Image": "https://cdn.pixabay.com/photo/2012/04/13/21/00/bell-pepper-33623_640.png"
+    },
+    {
+      "Category": "Desserts",
+      "Image": "https://cdn.pixabay.com/photo/2023/08/30/04/06/seafood-8222515_640.png"
+    }
+  ]
+  

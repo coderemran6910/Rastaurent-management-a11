@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const TopSelling = () => {
     const [topFood , setTopFood] = useState([])
-
     useEffect(()=>{
         axios.get('/topSelling.json')
         .then(res=> {

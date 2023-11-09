@@ -15,6 +15,7 @@ import FoodDetails from "../components/FoodDetails"
 import FoodPurchas from "../pages/FoodPurchas"
 import UpdateFood from "../pages/userPages/UpdateFood"
 
+
 const routes = createBrowserRouter([
     {
         path: '/',
@@ -24,7 +25,8 @@ const routes = createBrowserRouter([
             {
                 index: true,
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader:()=> fetch('https://restaurent-server.vercel.app/api/v1/top-ordered-items')
             },
             {
                 path: "allfoods",

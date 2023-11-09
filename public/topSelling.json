@@ -2,49 +2,55 @@
   {
     "id": 1,
     "name": "Chicken Alfredo",
-    "image": "chicken_alfredo.jpg",
-    "category": "Pasta",
+    "image": "https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_640.jpg",
+    "category": "Oil ",
     "price": 15.99,
-    "button": "Learn More"
+    "button": "Learn More",
+    "total_order": 150
   },
   {
     "id": 2,
-    "name": "Margherita Pizza",
-    "image": "margherita_pizza.jpg",
-    "category": "Pizza",
+    "name": "vegetables",
+    "image": "https://cdn.pixabay.com/photo/2016/08/11/08/04/vegetables-1584999_640.jpg",
+    "category": "Vagitable",
     "price": 12.99,
-    "button": "Learn More"
+    "button": "Learn More",
+    "total_order": 120
   },
   {
     "id": 3,
-    "name": "Grilled Salmon",
-    "image": "grilled_salmon.jpg",
+    "name": "coffee-beans",
+    "image": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_640.jpg",
     "category": "Seafood",
     "price": 18.99,
-    "button": "Learn More"
+    "button": "Learn More",
+    "total_order": 120
   },
   {
     "id": 4,
-    "name": "Vegetable Stir-Fry",
-    "image": "vegetable_stir_fry.jpg",
+    "name": "hamburger",
+    "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_640.jpg",
     "category": "Vegetarian",
     "price": 14.99,
-    "button": "Learn More"
+    "button": "Learn More",
+    "total_order": 100
   },
   {
     "id": 5,
-    "name": "Chocolate Fondue",
-    "image": "chocolate_fondue.jpg",
+    "name": "strawberries",
+    "image": "https://cdn.pixabay.com/photo/2018/04/29/11/54/strawberries-3359755_640.jpg",
     "category": "Dessert",
     "price": 9.99,
-    "button": "Learn More"
+    "button": "Learn More",
+    "total_order":80
   },
   {
     "id": 6,
-    "name": "Tropical Smoothie",
-    "image": "tropical_smoothie.jpg",
+    "name": "breakfast",
+    "image": "https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_640.jpg",
     "category": "Beverage",
     "price": 6.99,
-    "button": "Learn More"
+    "button": "Learn More",
+    "total_order": 50
   }
 ]
