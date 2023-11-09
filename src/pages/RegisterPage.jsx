@@ -105,7 +105,7 @@ const RegisterPage = () => {
       });
   };
   return (
-    <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto">
+    <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto flex-col-reverse md:flex-row">
               <Helmet><title> Register </title></Helmet>
 
       {/* Form */}
@@ -186,7 +186,7 @@ const RegisterPage = () => {
         <Title> Register Now </Title>
 
         {/* Social Login */}
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col md:flex-row items-center justify-center">
           <button
             onClick={handleGoogleSignIn}
             type="button"

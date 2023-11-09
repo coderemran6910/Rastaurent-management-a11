@@ -48,7 +48,7 @@ const FoodPurchas = () => {
 
     console.log(orderCount);
     return (
-        <div className=" w-full max-w-7xl mx-auto">
+        <div className=" w-full max-w-7xl mx-auto px-5">
         <Helmet><title> Food Purchas  </title></Helmet>
         <div className="py-10">
         <Title> Purchase this product  </Title>

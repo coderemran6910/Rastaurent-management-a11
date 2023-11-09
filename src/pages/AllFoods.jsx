@@ -15,7 +15,6 @@ const AllFoods = () => {
 const [itemPerPage, setItemPerPage]= useState(10)
 const [currentPage, setCurrentPage] = useState(0)
 const  {count}  = useLoaderData();
-console.log(count)
 
   const totalPage = Math.ceil(count / itemPerPage);
   console.log(totalPage)
@@ -58,7 +57,7 @@ console.log(count)
         {/* <SearchInput onChange={handleSearchInputChange} value={searchQuery} /> */}
         {/* Srarch Box start */}
         <div>
-          <div className="flex">
+          <div className="flex px-5">
             <label
               htmlFor="search-dropdown"
               className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -70,6 +69,7 @@ console.log(count)
               data-dropdown-toggle="dropdown"
               className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
               type="button"
+              style={{zIndex: 1}}
             >
               All categories{" "}
               <svg
@@ -166,7 +166,7 @@ console.log(count)
         {/* Srarch Box end */}
       </div>
 
-      <Title> All Foods: {filteredFood?.length} </Title>
+      <Title> All Foods: {count} </Title>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  justify-items-center">
         {filteredFood?.map((food) => (

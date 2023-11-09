@@ -10,7 +10,7 @@ const FoodDetails = () => {
         <div className="hero min-h-screen bg-base-200">
           <Helmet><title> Details-{name} </title></Helmet>
         <div className="hero-content flex-col lg:flex-row-reverse ">
-          <img src={image} className="max-w-xl rounded-lg shadow-2xl" />
+          <div className=" w-94 lg:w-1/2 rounded-lg shadow-2xl"><img src={image} className="rounded-lg" /></div>
           <div className="card flex-shrink-0 w-full max-w-2xl shadow-2xl bg-base-100  p-5 ">
             <h1 className="text-5xl font-bold">Food Name: <span className="text-[#67b76f]">{name}</span> </h1>
             <p className="py-6">{description}</p>

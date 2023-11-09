@@ -12,10 +12,10 @@ const SingleFood = ({ food }) => {
   }, [_id])
 
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="h-80 w-80 mx-auto  rounded-xl ">
+    <div className="w-full md:w-80 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="h-80 w-80   mx-auto  rounded-xl ">
         <img
-          className="p-8 rounded-t-lg h-full w-full rounded-xl  "
+          className="p-8 rounded-t-lg h-full w-full rounded-xl object-cover "
           src={image}
           alt="product image"
         />

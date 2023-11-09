@@ -16,10 +16,11 @@ const Banner = () => {
       <div className="flex flex-1 flex-col justify-center  " style={{ zIndex: 2 }}>
         <div>
         <h1 className="text-3xl md:text-4xl mb-12 text-white">
-          <span className="text-black font-extrabold text-5xl ">
+          <span className="text-black font-extrabold text-5xl  ">
             Emran's Food:
           </span>
-          <br /> Where Flavor Meets Tradition
+          <br />
+          <br /> <span className="font-extrabold text-5xl  text-[#39DB4A]">Where Flavor Meets Tradition</span>
         </h1>
         <p className="mb-10 pr-5 text-white">
           At Emran's Food, we're passionate about preserving the rich tapestry
@@ -48,7 +49,7 @@ const Banner = () => {
 
       <div
         style={{
-          background: "#06540e8c",
+          background: "#06540eb6",
           position: "absolute",
           top: 0,
           left: 0,

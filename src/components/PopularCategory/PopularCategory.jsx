@@ -15,7 +15,7 @@ const PopularCategory = () => {
 
 
   return (
-    <div className="py-10 px-10 bg-[#719C76]  flex flex-col items-center justify-center m-5 rounded-xl">
+    <div className="py-10 px-10 bg-[#719C76]  flex flex-col items-center justify-center my-10 rounded-xl">
       <Title >
         <span className="text-white">Popular Categories</span>
         <span className="text-res ml-10 text-sm text-black  uppercase font-semibold ">
@@ -31,7 +31,7 @@ const PopularCategory = () => {
            const { Image, Category} = category
             return (
               <div key={index} className="w-52 cursor-pointer  h-52 shadow-xl rounded-full bg-[#39DB4A] flex flex-col items-center justify-center text-white flex-wrap">
-                <div className=" w-10 -10 rounded-full ">
+                <div className=" w-16 -16 rounded-full ">
                   <img  className="rounded-full w-full " src={Image} />
                 </div>
                 <span className="text-3xl font-bold dark:text-gray-900 text-blue-950 justify-center  flex-shrink">

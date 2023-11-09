@@ -76,11 +76,11 @@ const LoginPage = () => {
       });
   };
   return (
-    <div className="flex items-center justify-center min-h-screen  max-w-7xl mx-auto px-10">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-center max-w-7xl mx-auto px-10">
               <Helmet><title> Login  </title></Helmet>
 
       {/* Form */}
-      <div className="hero min-h-screen">
+      <div className="hero min-h-fit md:min-h-screen">
         <div className="hero-content border rounded-xl">
           <div className="card flex-shrink-0 w-full max-w-sm  shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
