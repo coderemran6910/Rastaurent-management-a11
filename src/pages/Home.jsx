@@ -4,6 +4,7 @@ import PopularCategory from "../components/PopularCategory/PopularCategory";
 import TopSelling from "../components/Top Selling Section/TopSelling";
 import Service from "../components/service/service";
 import { useLoaderData } from "react-router-dom";
+import FoodGallery from "./foodGallery";
 
 const Home = () => {
     const toSellingProduct = useLoaderData()
@@ -18,6 +19,8 @@ const Home = () => {
             <TopSelling></TopSelling>
             <PopularCategory></PopularCategory>
             <Service></Service>
+            <FoodGallery />
+            
         </div>
     );
 };

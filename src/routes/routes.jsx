@@ -14,6 +14,7 @@ import PrivateRoute from "../components/PrivateRoute"
 import FoodDetails from "../components/FoodDetails"
 import FoodPurchas from "../pages/FoodPurchas"
 import UpdateFood from "../pages/userPages/UpdateFood"
+import FoodGallery from "../pages/foodGallery"
 
 
 const routes = createBrowserRouter([
@@ -47,6 +48,10 @@ const routes = createBrowserRouter([
                 path: "blog",
                 element: <Blog></Blog>
             },
+            {
+                path :"gallery",
+                element: <FoodGallery />
+            }
         ]
     },
 

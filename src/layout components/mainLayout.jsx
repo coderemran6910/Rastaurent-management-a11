@@ -24,6 +24,10 @@ const MainLayout = ({ children }) => {
         
         Blog
       </NavLink>
+      <NavLink className="btn btn-ghost  " to={"/gallery"}>
+        
+        Food Gallery
+      </NavLink>
 
       {user ? (
         <>
